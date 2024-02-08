@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+$text: #080607;
+$background: #f9f4f5;
+$primary: #bb576b;
+$secondary: #ffb7c5;
+$accent: #e25571;
+
+$sansjapan: 'Noto Sans JP', sans-serif;
+$serifjapan: 'Noto Serif JP', serif;
+$tangerine: 'Tangerine', cursive;
+
+:root {
+    --fs-main: 3rem;
+    --fs-sec: 6rem;
+    --fs-desc: 1.5rem;
+    --fs-about-heading: 3rem;
+    --fs-desc-about: 1.5rem;
+}
+
+.section-heading {
+    font-family: $tangerine;
+    color: $accent;
+    font-size: var(--fs-about-heading);
+    font-weight: 700;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#intro {
+    .bg-video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
+    min-height: 91vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .introduction-wrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        .main-heading {
+            font-family: $tangerine;
+            font-size: var(--fs-main);
+            font-weight: 700;
+            width: max-content;
+            margin: auto;
+            span {
+                color: $accent;
+                font-size: var(--fs-main);
+                text-shadow: 1px 1px 0px #080607;
+                margin-left: auto;
+            }
+        }
+        .japan-heading {
+            font-family: $sansjapan;
+            font-size: var(--fs-sec);
+            color: $accent;
+            font-weight: 600;
+            text-shadow: 1px 1px 0px #080607;
+            width: max-content;
+            margin: auto;
+        }
+        .desc-heading {
+            font-family: $serifjapan;
+            font-size: var(--fs-desc);
+            color: $text;
+            font-weight: 600;
+            max-width: 45ch;
+            margin: auto;
+            text-align: center;
+        }
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $background;
+        mix-blend-mode: lighten;
+        opacity: .8;
+        z-index: 0;
+    }
+}
+
+#about {
+    display: grid;
+    grid-template-columns: auto 50%;
+    .about-subsection {
+        background-color: #f9f4f5;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffb7c5' fill-opacity='0.2' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+        .about-desc {
+            font-family: $serifjapan;
+            color: $text;
+            font-size: var(--fs-desc-about);
+            padding: 20px;
+            font-weight: 500;
+            max-width: 70ch;
+            margin: auto;
+            text-align: justify;
+        }
+    }
+    .interior-img {
+        height: 100%;
+    }
+}
+
+#location {
+    display: grid;
+    grid-template-columns: auto 50%;
+    grid-template-areas: 
+    'img content';
+    .location-subsection {
+        background-color: #f9f4f5;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 28' width='56' height='28'%3E%3Cpath fill='%23ffb7c5' fill-opacity='0.2' d='M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z'%3E%3C/path%3E%3C/svg%3E");
+        h3 {
+            font-family: $serifjapan;
+            text-align: center;
+            font-size: var(--fs-desc);
+        }
+        ul {
+            padding-block: 20px;
+            text-align: center;
+            font-family: $sansjapan;
+            font-size: var(--fs-desc-about);
+        }
+        p {
+            svg {
+                transform: translateY(5px);
+                font-size: 2.2rem;
+            }
+            font-family: $sansjapan;
+            font-size: var(--fs-desc-about);
+            text-align: center;
+        }
+    }
+    .exterior-img {
+        grid-area: img;
+    }
+}
+
+footer {
+    background-color: #ffb7c5;
+    display: flex;
+    padding: 30px;
+    .flex-item-1 {
+        flex-basis: 50%;
+        padding-left: 30%;
+        .socials {
+            h3 {
+                font-family: $sansjapan;
+                color: $text;
+                font-size: 2.8rem;
+                font-weight: 500;
+            }
+            a {
+                color: $text;
+                font-family: $serifjapan;
+                font-size: 1.6rem;
+                text-decoration: none;
+                width: max-content;
+                svg {
+                    font-size: 2rem;
+                    transform: translateY(5px);
+                }
+            }
+            display: flex;
+            flex-direction: column;
+        }
+        .contacts {
+            margin-top: 30px;
+            h3 {
+                font-family: $sansjapan;
+                color: $text;
+                font-size: 2.8rem;
+                font-weight: 500;
+            }
+            p {
+                color: $text;
+                font-family: $serifjapan;
+                font-size: 1.6rem;
+                svg {
+                    font-size: 2rem;
+                    transform: translateY(5px);
+                }
+            }
+        }
+    }
+    .flex-item-2 {
+        flex-basis: 50%;
+    }
+}
+
+#review {
+    min-height: 80vh;
+    background: url('../assets/wave-bg.svg');
+    background-size: cover;
+    background-repeat: no repeat;
+    .reviews-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 200px;
+        .reviews-heading-wrapper {
+            padding-block: 50px 30px;
+            h2 {
+                font-family: $tangerine;
+                font-weight: 700;
+                font-size: var(--fs-about-heading);
+            }
+            span {
+                font-family: $sansjapan;
+                font-size: var(--fs-desc-about);
+                color: $primary;
+            }
+        }
+        .flex-items-wrapper {
+            display: flex;
+            .review-card {
+                width: calc(100% / 4);
+                .stars {
+                    font-size: 2.4rem;
+                }
+                h3 {
+                    font-family: $sansjapan;
+                    font-size: 2.4rem;
+                    padding-block: 20px;
+                    font-weight: 600;
+                }
+                p {
+                    font-family: $serifjapan;
+                    font-size: 1.9rem;
+                    max-width: 32ch;
+                    color: $text;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    :root {
+        --fs-main: 10rem;
+        --fs-sec: 9rem;
+        --fs-desc: 3rem;
+        --fs-about-heading: 8rem;
+        --fs-desc-about: 1.8rem;
+    }
+}

@@ -1,0 +1,100 @@
+@import url('./_reset.scss');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+
+$text: #080607;
+$background: #f9f4f5;
+$primary: #bb576b;
+$secondary: #ffb7c5;
+$accent: #e25571;
+
+$sansjapan: 'Noto Sans JP', sans-serif;
+$serifjapan: 'Noto Serif JP', serif;
+
+:root {
+    --fs-restaurant-name: 2.3rem;
+    --fs-nav-link: 1.4rem;
+    --padding-nav: 45px;
+}
+
+html {
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(251, 204, 231, 0);
+    }
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 192, 203, 1);
+        border-radius: 5px;
+    }
+}
+
+body {
+    background-color: $background;
+}
+
+header {
+    display: grid;
+    grid-template-areas: 
+    'name logo'
+    'nav nav';
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgb(228, 228, 228);
+    .navigation {
+        grid-area: nav;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        .navigation-btn {
+            font-family: $sansjapan;
+            font-size: var(--fs-nav-link);
+            color: $text;
+            background-color: transparent;
+            border: none;
+            position: relative;
+            cursor: pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background-color: $accent;
+                transition: all .5s;
+            }
+            &:hover::before {
+                width: 100%;
+            }
+            &[data-active='true']::before {
+                width: 100%;
+            }
+        }
+    }
+    .restaurant-name {
+        grid-area: name;
+        margin-left: var(--padding-nav);
+        margin-block: auto;
+        font-family: $serifjapan;
+        font-size: var(--fs-restaurant-name);
+        font-weight: 700;
+        color: $text;
+        span {
+            color: $accent;
+        }
+    }
+    .restaurant-logo {
+        grid-area: logo;
+        max-width: 90px;
+        margin-left: 20px;
+    }
+}
+
+@media screen and (min-width: 1700px) {
+    header {
+        grid-template-areas: 'name nav logo';
+        grid-template-columns: max-content auto 8%;
+    }
+}
