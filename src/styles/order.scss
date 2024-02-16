@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+$text: #080607;
+$background: #f9f4f5;
+$primary: #bb576b;
+$secondary: #ffb7c5;
+$accent: #e25571;
+
+$sansjapan: 'Noto Sans JP', sans-serif;
+$serifjapan: 'Noto Serif JP', serif;
+$tangerine: 'Tangerine', cursive;
+
+#img-section {
+    background: url('../assets/menu.webp');
+    background-repeat: no-repeat;
+    background-position: 25% 75%;
+    background-size: 1920px 1080px;
+    background-color: rgba($text, .5);
+    background-blend-mode: overlay;
+    width: 100%;
+    text-align: center;
+    padding-block: 50px;
+    h1 {
+        font-family: $tangerine;
+        font-weight: 700;
+        font-size: 8rem;
+        color: $background;
+    }
+    div:not(.adress-wrapper) {
+        font-family: $sansjapan;
+        font-size: 1.6rem;
+        color: $background;
+        margin-top: 40px;
+    }
+    .adress-wrapper {
+        position: relative;
+        display: flex;
+        background-color: white;
+        max-width: 430px;
+        margin: auto;
+        margin-top: 40px;
+        height: 55px;
+        border-radius: 4px;
+        input {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: rgb(124, 124, 124);
+            position: absolute;
+            font-family: $sansjapan;
+            flex: 1;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 80%;
+            z-index: 2;
+            background-color: transparent;
+            padding-left: 10px;
+            top: 100%;
+            transform: translateY(-100%);
+            &:focus {
+                border-bottom: 2px solid $primary;
+                border-radius: 4px;
+            }
+        }
+        label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+            font-family: $sansjapan;
+            white-space: nowrap;
+            font-size: 1.3rem;
+            color: rgb(172, 172, 172);
+            letter-spacing: 0.25px;
+            transition: all ease .25s;
+            font-weight: 500;
+            cursor: text;
+        }
+        svg {
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.active {
+    transform: translateY(-20px) !important;
+    font-size: 1rem !important;
+    color: $primary !important;
+    font-weight: 700 !important;
+}
+
+#location-section {
+    margin-inline: 350px;
+    margin-top: 50px;
+    h2 {
+        font-family: $sansjapan;
+        font-size: 20px;
+        font-weight: 500;
+        padding-bottom: 10px;
+    }
+    .location-info-wrapper {
+        flex: 1;   
+    }
+    img {
+        max-width: 143px;
+        width: 100%;
+        vertical-align:top;
+        border-bottom-left-radius: 4px;
+        border-top-left-radius: 4px;
+    }
+    .location-card {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        display: flex;
+        margin: auto;
+        margin-bottom: 20px;
+        transition: all ease .3s;
+        border-radius: 5px;
+        height: 145px;
+        overflow: hidden;
+        .location-info-wrapper {
+            padding: 20px;
+            > *:not(h2) {
+                line-height: 250%;
+                font-family: $sansjapan;
+                font-size: 1.3rem;
+                color: rgb(121, 121, 121);
+                font-weight: 500;
+            }
+        }
+        .location-type-wrapper {
+            position: relative;
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: -5%;
+                transform: translateY(-50%);
+                width: 1px;
+                height: 80%;
+                background-color: rgb(194, 194, 194);
+                border-radius: 100%;
+            }
+            button {
+                text-transform: uppercase;
+                font-family: $sansjapan;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 1px;
+                padding: 8px 45px;
+                width: 100%;
+                border-radius: 4px;
+                border: none;
+                background-color: $primary;
+                color: $background;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+                transition: 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+                cursor: pointer;
+                &:hover {
+                    background-color: $secondary;
+                    color: $text;
+                }
+            }
+            ul {
+                margin-top: 10px;
+                font-family: $sansjapan;
+                font-size: 1.3rem;
+                color: rgb(121, 121, 121);
+                font-weight: 500;
+            }
+        }
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transform: translateY(-2px);
+        }
+    }
+}

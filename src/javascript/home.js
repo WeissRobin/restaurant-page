@@ -1,6 +1,8 @@
 import '../styles/home.scss';
 import Interior from '../assets/interior.jpg';
 import Exterior from '../assets/exterior.webp';
+import TeaBreaker from '../assets/tea-img.jpg';
+import Video from '../assets/video.mp4';
 import { Footer } from './footer';
 
 const content = document.getElementById('content');
@@ -14,8 +16,8 @@ export const renderContent = () => {
             <h1 class="main-heading">Satisfy Your Senses with a Dash of <span>Japan.</span></h1>
             <p class="desc-heading">Immerse yourself in the flavors of Japan, where culinary excellence meets cultural richness.</p>
         </div>
-        <video class="bg-video" autoplay loop playsinline>media
-            <source src="../src/assets/video.mp4">
+        <video class="bg-video" playsinline autoplay muted loop>
+            <source src="${Video}">
         </video>
     `;
 
@@ -58,6 +60,11 @@ export const renderContent = () => {
             <p><svg xmlns="http://www.w3.org/2000/svg" width="1.2em" height="1.2em" viewBox="0 0 24 24"><g fill="none"><path fill="#e25571" d="M3 5V4a1 1 0 0 0-1 1zm18 0h1a1 1 0 0 0-1-1zM3 6h18V4H3zm17-1v12h2V5zm-1 13H5v2h14zM4 17V5H2v12zm1 1a1 1 0 0 1-1-1H2a3 3 0 0 0 3 3zm15-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3z"/><path stroke="#e25571" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 5l9 9l9-9"/></g></svg> reservations@sakuratei-restaurant.com</p>
         </div>
         <img class="exterior-img" src="${Exterior}">
+    `;
+
+    const imgBreaker = document.createElement('div'); imgBreaker.classList.add('tea-wrapper');
+    imgBreaker.innerHTML = `
+    <img class="tea-img" src="${TeaBreaker}">
     `;
 
     const reviewSection = document.createElement('section'); reviewSection.setAttribute('id', 'review');
@@ -116,5 +123,10 @@ export const renderContent = () => {
     </div>
     `;
 
-    content.append(introSection, aboutSection, locationSection, reviewSection, Footer());
+    content.append(introSection, aboutSection, locationSection, reviewSection, imgBreaker, Footer());
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('video');
+    console.log(video);
+});

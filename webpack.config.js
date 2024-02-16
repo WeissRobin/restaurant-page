@@ -22,6 +22,10 @@ module.exports = {
             test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
             type: 'asset/resource',
           },
+          {
+            test: /\.mp4$/,
+            use: 'file-loader?name=assets/[video].[mp4]',
+          },
         ],
       },
 }

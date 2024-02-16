@@ -157,58 +157,6 @@ $tangerine: 'Tangerine', cursive;
     }
 }
 
-footer {
-    background-color: #ffb7c5;
-    display: flex;
-    padding: 30px;
-    .flex-item-1 {
-        flex-basis: 50%;
-        padding-left: 30%;
-        .socials {
-            h3 {
-                font-family: $sansjapan;
-                color: $text;
-                font-size: 2.8rem;
-                font-weight: 500;
-            }
-            a {
-                color: $text;
-                font-family: $serifjapan;
-                font-size: 1.6rem;
-                text-decoration: none;
-                width: max-content;
-                svg {
-                    font-size: 2rem;
-                    transform: translateY(5px);
-                }
-            }
-            display: flex;
-            flex-direction: column;
-        }
-        .contacts {
-            margin-top: 30px;
-            h3 {
-                font-family: $sansjapan;
-                color: $text;
-                font-size: 2.8rem;
-                font-weight: 500;
-            }
-            p {
-                color: $text;
-                font-family: $serifjapan;
-                font-size: 1.6rem;
-                svg {
-                    font-size: 2rem;
-                    transform: translateY(5px);
-                }
-            }
-        }
-    }
-    .flex-item-2 {
-        flex-basis: 50%;
-    }
-}
-
 #review {
     min-height: 80vh;
     background: url('../assets/wave-bg.svg');
@@ -252,6 +200,16 @@ footer {
                 }
             }
         }
+    }
+}
+
+.tea-wrapper {
+    background-color: $secondary;
+    display: flex;
+    justify-content: center;
+    .tea-img {
+        margin-top: 20px;
+        max-width: 1800px;
     }
 }
 

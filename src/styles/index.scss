@@ -1,5 +1,6 @@
 @import url('./_reset.scss');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;600;700;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 
 $text: #080607;
 $background: #f9f4f5;
@@ -9,10 +10,11 @@ $accent: #e25571;
 
 $sansjapan: 'Noto Sans JP', sans-serif;
 $serifjapan: 'Noto Serif JP', serif;
+$tangerine: 'Tangerine', cursive;
 
 :root {
     --fs-restaurant-name: 2.3rem;
-    --fs-nav-link: 1.4rem;
+    --fs-nav-link: 1.6rem;
     --padding-nav: 45px;
 }
 
@@ -46,7 +48,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 10px;
+        gap: 30px;
         .navigation-btn {
             font-family: $sansjapan;
             font-size: var(--fs-nav-link);
@@ -54,14 +56,17 @@ header {
             background-color: transparent;
             border: none;
             position: relative;
+            text-transform: uppercase;
+            font-weight: 700;
             cursor: pointer;
             &::before {
                 content: '';
                 position: absolute;
-                top: 100%;
-                left: 0;
+                bottom: -5px;
+                left: 50%;
+                transform: translateX(-50%);
                 width: 0%;
-                height: 2px;
+                height: 3px;
                 background-color: $accent;
                 transition: all .5s;
             }
@@ -90,7 +95,255 @@ header {
         max-width: 90px;
         margin-left: 20px;
     }
+    .res-button {
+        font-size: 18px;
+        color: $primary;
+        font-family: $sansjapan;
+        font-weight: 700;
+        background-color: transparent;
+        border: 2px solid $primary;
+        text-transform: uppercase;
+        padding:8px 12px;
+        transition: ease .4s;
+        cursor: pointer;
+        &:hover {
+            background-color: $accent;
+            color: $background;
+        }
+    }
 }
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffb7c5;
+    padding-block: 100px;
+    align-items: center;
+    h1 {
+        font-family: $tangerine;
+        font-size: 90px;
+        color: $primary;
+        font-weight: 700;
+        text-align: center;
+    }
+    .big-ref {
+        text-decoration: underline;
+        font-family: $sansjapan;
+        font-size: 40px;
+        color: transparent;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        transition: color .4s ease;
+        &:hover {
+            color: $text;
+        }
+    }
+    .contact-wrapper {
+        display: flex;
+        width: 100%;
+        .socials {
+            text-align: center;
+            flex-basis: 50%;
+            h3 {
+                font-family: $sansjapan;
+                color: $text;
+                font-size: 2.8rem;
+                font-weight: 500;
+            }
+            a {
+                svg {
+                    font-size: 3rem;
+                    transform: translateY(5px);
+                    transition: transform .3s ease;
+                    &:hover {
+                        transform: translateY(10px);
+                    }
+                }
+            }
+            display: flex;
+            flex-direction: column;
+        }
+        .contacts {
+            text-align: center;
+            flex-basis: 50%;
+            h3 {
+                font-family: $sansjapan;
+                color: $text;
+                font-size: 2.8rem;
+                font-weight: 500;
+            }
+            p {
+                color: $text;
+                font-family: $serifjapan;
+                font-size: 1.8rem;
+                svg {
+                    font-size: 2rem;
+                    transform: translateY(5px);
+                }
+            }
+        }
+    }
+}
+
+.reservation-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: $sansjapan;
+    
+    .close-icon {
+        position: absolute;
+        top: 2vh;
+        left: 96vw;
+        color: white;
+        font-size: 4rem;
+        transition: color .4s ease;
+        cursor: pointer;
+        &:hover {
+            color: rgba(white, .7);
+        }
+    }
+
+    .form-wrapper {
+        .reservation {
+            font-weight: 700;
+            color: $accent;
+            font-size: 3.7rem;
+            letter-spacing: 2px;
+            position: relative;
+            text-shadow: 3px 3px rgb(228, 228, 228);
+            text-align: center;
+            margin-bottom: 80px;
+            svg {
+                position: absolute;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 600px;
+            .input-label {
+                color: white;
+                font-size: 1.3rem;
+                font-weight: 500;
+            }
+            .form-item {
+                display: flex;
+                background-color: white;
+                padding: 15px 10px;
+                border-radius: 4px;
+                * {
+                    font-size: 1.8rem;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+                input {
+                    border: none;
+                    width: 100%;
+                }
+                select {
+                    border: none;
+                    width: 100%;
+                    appearance: none;
+                }
+                svg {
+                    margin-right: 10px;
+                    font-size: 2rem;
+                }
+            }
+            button {
+                margin: auto;
+                margin-top: 20px;
+                padding: 0.7rem 1.7rem 0.8rem 1.7rem;
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+                max-width: 200px;
+                text-transform: uppercase;
+                font-family: $sansjapan;
+                font-weight: 900;
+                background-color: transparent;
+                color: $accent;
+                border: 2px solid $accent;
+                cursor: pointer;
+                transition: all .4s ease;
+                &:hover {
+                    color: black;
+                    background-color: $accent;
+                }
+            }
+        }
+    }
+}
+
+.bg-animate-in {
+    animation: FADE_IN .5s forwards;
+}
+
+.bg-animate-out {
+    animation: FADE_OUT .5s forwards;
+}
+
+.form-animate-up {
+    animation: MOVE_UP .5s forwards;
+}
+
+.form-animate-down {
+    animation: MOVE_DOWN .5s forwards;
+}
+
+@keyframes FADE_IN {
+    0% {
+        background-color: rgba(black, .1);
+    }
+    100% {
+        background-color: rgba(black, .9);
+    }
+}
+
+@keyframes FADE_OUT {
+    0% {
+        background-color: rgba(black, .9);
+    }
+    100% {
+        background-color: rgba(black, 0);
+        display: none;
+    }
+}
+
+@keyframes MOVE_UP {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes MOVE_DOWN {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
 
 @media screen and (min-width: 1700px) {
     header {
