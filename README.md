@@ -1,2 +1,10 @@
-- Need to add responsivity (only for desktops!)
-You can see it here --> https://deluxe-genie-0862cc.netlify.app 🤯
+# Restaurant page 
+
+Uses Javascript and Webpack
+
+Odin project - restaurant page. Simple restaurant landing page, just for portfolio. Design is made by myself.
+
+Need to do:
+- responsivness (only for desktop)
+- maybe better design
+- maybe working reservation system...?
